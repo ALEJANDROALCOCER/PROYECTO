@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Física - Detalles</title>
+  <meta name="description" content="Física - Mecánica, Termodinámica y más">
+  <meta name="author" content="TuNombre">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/templatemo-style.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet"> <!-- Animaciones -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .header {
+      background-color: #800020; /* Guinda */
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section {
+      padding: 30px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section h2 {
+      color: #800020;
+      margin-bottom: 20px;
+    }
+
+    .pdf-section {
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeInUp 2s ease;
+    }
+
+    .pdf-section h3 {
+      color: #800020;
+      margin-bottom: 15px;
+    }
+
+    .pdf-section a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #800020;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .pdf-section a:hover {
+      background-color: #660018;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #800020;
+      color: white;
+    }
+
+    /* Botones de los Cuestionarios */
+    .buttons-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .buttons-container a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #800020;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons-container a:hover {
+      background-color: #660018;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Física - Conceptos Clave</h1>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content-section container">
+    <h2>Temas Generales de Física</h2>
+    <p>
+      A continuación, se presentan algunos de los temas principales que se abordan en Física a nivel preparatoria en México:
+    </p>
+    <ul>
+      <li><strong>Cinemática:</strong> Movimiento rectilíneo uniforme (MRU) y acelerado (MRUA).</li>
+      <li><strong>Dinámica:</strong> Leyes de Newton, fuerzas y fricción.</li>
+      <li><strong>Trabajo, energía y potencia:</strong> Tipos de energía, trabajo mecánico y conservación de la energía.</li>
+      <li><strong>Termodinámica:</strong> Calor, temperatura y leyes de la termodinámica.</li>
+      <li><strong>Óptica:</strong> Reflexión, refracción y formación de imágenes.</li>
+      <li><strong>Electricidad y magnetismo:</strong> Ley de Coulomb, circuitos eléctricos y electromagnetismo.</li>
+      <li><strong>Ondas:</strong> Propiedades de las ondas, sonido y luz.</li>
+      <li><strong>Mecánica de fluidos:</strong> Presión, densidad y principio de Arquímedes.</li>
+    </ul>
+  </div>
+
+  <!-- PDF Section -->
+  <div class="pdf-section container mt-5">
+    <h3>Descarga Material en PDF</h3>
+    <p>Haz clic en los siguientes enlaces para acceder a recursos descargables en formato PDF:</p>
+    <ul>
+      <li><a href="pdf/fis1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> formulario 1 </a></li>
+      <li><a href="pdf/fis2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> formulario 2</a></li>
+    </ul>
+  </div>
+
+  <!-- Botones de los Cuestionarios -->
+  <div class="buttons-container container">
+    <button onclick="location.href='http://localhost/puntajes/CF1.php'"></i> Cuestionario 1</button>
+    <button onclick="location.href='http://localhost/puntajes/CF2.php'"></i> Cuestionario 2</button>
+  </div>
+
+  <!-- Botón Regresar -->
+  <div class="buttons-container container">
+    <a href="index.html">Regresar</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Física - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>

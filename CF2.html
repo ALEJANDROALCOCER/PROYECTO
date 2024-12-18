@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Física - Parte 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #007b00;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario de Física - Parte 2</h1>
+        <form id="quizForm2">
+            <div class="question">
+                <label for="name">1. Ingresa tu nombre:</label>
+                <input type="text" id="name" placeholder="Tu nombre" required>
+            </div>
+            <!-- Preguntas de opción múltiple -->
+            <div class="question">
+                <label>2. ¿Qué es la temperatura?</label>
+                <input type="radio" name="q1" value="1"> La medida de la energía cinética promedio de las partículas<br>
+                <input type="radio" name="q1" value="2"> La cantidad de calor en un cuerpo<br>
+                <input type="radio" name="q1" value="3"> La cantidad de materia en un objeto<br>
+            </div>
+            <div class="question">
+                <label>3. ¿Qué dice la primera ley de la termodinámica?</label>
+                <input type="radio" name="q2" value="1"> La energía interna de un sistema cambia por la transferencia de calor o trabajo.<br>
+                <input type="radio" name="q2" value="2"> La energía de un sistema se conserva sin importar las condiciones.<br>
+                <input type="radio" name="q2" value="3"> La temperatura de un cuerpo no cambia cuando se le transfiere calor.<br>
+            </div>
+            <div class="question">
+                <label>4. ¿Qué es la refracción?</label>
+                <input type="radio" name="q3" value="1"> Cambio de dirección de la luz al pasar de un medio a otro.<br>
+                <input type="radio" name="q3" value="2"> La reflexión de la luz al chocar con una superficie.<br>
+                <input type="radio" name="q3" value="3"> El paso de luz a través de un objeto transparente.<br>
+            </div>
+            <div class="question">
+                <label>5. ¿Qué establece la Ley de Coulomb?</label>
+                <input type="radio" name="q4" value="1"> La fuerza entre dos cargas eléctricas es directamente proporcional al producto de las cargas e inversamente proporcional al cuadrado de la distancia entre ellas.<br>
+                <input type="radio" name="q4" value="2"> La fuerza entre dos cargas es inversamente proporcional al producto de las cargas.<br>
+                <input type="radio" name="q4" value="3"> La fuerza entre dos cargas no depende de la distancia entre ellas.<br>
+            </div>
+            <div class="question">
+                <label>6. ¿Qué es un circuito eléctrico?</label>
+                <input type="radio" name="q5" value="1"> Un circuito eléctrico es una ruta cerrada por la que circula la corriente eléctrica.<br>
+                <input type="radio" name="q5" value="2"> Un conjunto de dispositivos que almacenan energía.<br>
+                <input type="radio" name="q5" value="3"> Un sistema que produce electricidad de manera independiente.<br>
+            </div>
+            <button type="button" class="btn" onclick="checkAnswers2()">Enviar</button>
+        </form>
+        <div class="result" id="result2"></div>
+    </div>
+
+    <script>
+        function checkAnswers2() {
+            const answers = {
+                q1: "1", // La respuesta correcta es la primera opción
+                q2: "1", // La respuesta correcta es la primera opción
+                q3: "1", // La respuesta correcta es la primera opción
+                q4: "1", // La respuesta correcta es la primera opción
+                q5: "1"  // La respuesta correcta es la primera opción
+            };
+
+            let score = 0;
+            const userName = document.getElementById('name').value;
+
+            if (!userName) {
+                alert("Por favor, ingresa tu nombre.");
+                return;
+            }
+
+            if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
+            if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
+            if (document.querySelector('input[name="q4"]:checked')?.value === answers.q4) score++;
+            if (document.querySelector('input[name="q5"]:checked')?.value === answers.q5) score++;
+
+            const result = document.getElementById('result2');
+            result.textContent = `Hola ${userName}, tu puntuación es: ${score}/5`;
+            result.style.color = score === 5 ? '#007b00' : '#d9534f';
+        }
+    </script>
+</body>
+</html>

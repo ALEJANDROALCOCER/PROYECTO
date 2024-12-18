@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matemáticas - Detalles</title>
+  <meta name="description" content="Matemáticas - Funciones, Álgebra y más">
+  <meta name="author" content="TuNombre">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/templatemo-style.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet"> <!-- Animaciones -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .header {
+      background-color: #800020; /* Guinda */
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section {
+      padding: 30px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section h2 {
+      color: #800020;
+      margin-bottom: 20px;
+    }
+
+    .topic {
+      margin-bottom: 30px;
+    }
+
+    .topic button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      color: white;
+      background-color: #800020;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .topic button:hover {
+      background-color: #660018;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #800020;
+      color: white;
+    }
+
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: white;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Matemáticas - Conceptos Clave</h1>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content-section container">
+    <h2>Temas Generales de Matemáticas</h2>
+
+    <div class="topic">
+      <h3>Álgebra</h3>
+      <p>Operaciones con polinomios, ecuaciones cuadráticas y factorización.</p>
+      <button onclick="location.href='http://localhost/puntajes/CM1.php'"><i class="fas fa-question-circle"></i> Cuestionario de Álgebra</button>
+    </div>
+
+    <div class="topic">
+      <h3>Geometría y trigonometria</h3>
+      <p>Teoremas básicos, áreas, volúmenes y triángulos, angulos y mas .</p>
+      <button onclick="location.href='http://localhost/puntajes/CM2.php'"><i class="fas fa-question-circle"></i> Cuestionario de geometria y trigonometria</button>
+
+    </div>
+
+    
+
+
+    <div class="topic">
+      <h3>Cálculo Diferencial</h3>
+      <p>Límites, derivadas y aplicaciones.</p>
+      <button onclick="location.href='http://localhost/puntajes/CM3.php'"><i class="fas fa-question-circle"></i> Cuestionario de calculo Diferencial</button>
+
+    </div>
+
+    <div class="topic">
+      <h3>Cálculo Integral</h3>
+      <p>Introducción a integrales y áreas bajo curvas.</p>
+      <button onclick="location.href='http://localhost/puntajes/CM4.php'"></i> Cuestionario de Cálculo Integral</button>
+    </div>
+
+    <div class="topic">
+      <h3>Probabilidad y Estadística</h3>
+      <p>Conceptos básicos, medidas de tendencia central y probabilidad.</p>
+      <button onclick="location.href='http://localhost/puntajes/CM5.php'"></i> Cuestionario de Probabilidad y Estadística</button>
+    </div>
+
+    <!-- Button to go back to the main page -->
+    <div class="text-center">
+      <button class="back-button" onclick="location.href='index.html'"><i class="fas fa-arrow-left"></i> Regresar a la Página Principal</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Matemáticas - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>

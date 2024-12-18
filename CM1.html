@@ -1,0 +1,91 @@
+<?php
+// Mostrar errores para depurar
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$mensaje = ""; // Mensaje inicial vacío
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recoger el nombre del usuario
+    $nombre = $_POST['name'];
+    $puntuacion = 0; // Inicializar puntuación en 0
+
+    // Respuestas correctas
+    $respuestas_correctas = array(
+        "q1" => "3",                   // Pregunta 1
+        "q2" => "(x + 2)(x + 3)",      // Pregunta 2
+        "q3" => "x = 2, x = 3",        // Pregunta 3
+        "q4" => "22/15"                // Pregunta 4
+    );
+
+    // Verificar respuestas
+    foreach ($respuestas_correctas as $key => $value) {
+        if (isset($_POST[$key]) && $_POST[$key] === $value) {
+            $puntuacion++; // Sumar 1 punto por cada respuesta correcta
+        }
+    }
+
+    // Conexión a la base de datos
+    $conexion = new mysqli("localhost", "root", "", "nombre_base_datos");
+
+    // Verificar si la conexión falla
+    if ($conexion->connect_error) {
+        die("Conexión fallida: " . $conexion->connect_error);
+    }
+
+    // Insertar datos del cuestionario en la tabla
+    $stmt = $conexion->prepare("INSERT INTO tabla_resultados (nombre, puntuacion, idcuestionario) VALUES (?, ?, ?)");
+    $stmt->bind_param("sii", $nombre, $puntuacion, $id_cuestionario);
+
+    $id_cuestionario = 1; // ID fijo del cuestionario
+
+    if ($stmt->execute()) {
+        $mensaje = "$nombre, tu puntuación es: $puntuacion de 4"; // Mensaje de éxito
+    } else {
+        $mensaje = "Error al guardar los datos: " . $stmt->error; // Mensaje de error
+    }
+
+    // Cerrar conexiones
+    $stmt->close();
+    $conexion->close();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Matemáticas</title>
+</head>
+<body>
+    <h2>Cuestionario de Matemáticas</h2>
+
+    <!-- Mostrar el mensaje después de enviar el formulario -->
+    <?php if (!empty($mensaje)) echo "<p>$mensaje</p>"; ?>
+
+    <!-- Formulario del cuestionario -->
+    <form method="POST" action="">
+        <label>Tu nombre:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label>1. ¿Cuál es el valor de x en 3x + 5 = 14?</label><br>
+        <input type="radio" name="q1" value="3"> 3<br>
+        <input type="radio" name="q1" value="4"> 4<br><br>
+
+        <label>2. Factorización de x² + 5x + 6</label><br>
+        <input type="radio" name="q2" value="(x + 2)(x + 3)"> (x + 2)(x + 3)<br>
+        <input type="radio" name="q2" value="(x + 1)(x + 6)"> (x + 1)(x + 6)<br><br>
+
+        <label>3. Solución de la ecuación x² - 5x + 6 = 0</label><br>
+        <input type="radio" name="q3" value="x = 2, x = 3"> x = 2, x = 3<br>
+        <input type="radio" name="q3" value="x = 1, x = 6"> x = 1, x = 6<br><br>
+
+        <label>4. Resultado de 11/15 + 11/15</label><br>
+        <input type="radio" name="q4" value="22/15"> 22/15<br>
+        <input type="radio" name="q4" value="11/30"> 11/30<br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

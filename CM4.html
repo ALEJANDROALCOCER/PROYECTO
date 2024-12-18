@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuestionario de Cálculo Integral</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1, h3 {
+      color: #343a40;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .btn-custom {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+    .form-control {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Cuestionario de Cálculo Integral</h1>
+    
+    <!-- Nombre del usuario -->
+    <div class="form-group">
+      <label for="userName">Nombre:</label>
+      <input type="text" class="form-control" id="userName" placeholder="Ingresa tu nombre" required>
+    </div>
+    
+    <form id="quizForm">
+      <div class="question">
+        <h4>1. ¿Cuál es la integral de f(x) = x?</h4>
+        <input type="radio" id="a1" name="q1" value="x²/2">
+        <label for="a1">a) x²/2</label><br>
+        <input type="radio" id="a2" name="q1" value="x²">
+        <label for="a2">b) x²</label><br>
+        <input type="radio" id="a3" name="q1" value="2x">
+        <label for="a3">c) 2x</label><br>
+        <input type="radio" id="a4" name="q1" value="x³">
+        <label for="a4">d) x³</label><br>
+      </div>
+
+      <div class="question">
+        <h4>2. ¿Cuál es la integral de f(x) = cos(x)?</h4>
+        <input type="radio" id="b1" name="q2" value="sin(x)">
+        <label for="b1">a) sin(x)</label><br>
+        <input type="radio" id="b2" name="q2" value="cos(x)">
+        <label for="b2">b) cos(x)</label><br>
+        <input type="radio" id="b3" name="q2" value="-sin(x)">
+        <label for="b3">c) -sin(x)</label><br>
+        <input type="radio" id="b4" name="q2" value="tan(x)">
+        <label for="b4">d) tan(x)</label><br>
+      </div>
+
+      <div class="question">
+        <h4>3. ¿Cuál es la integral de f(x) = 1/x?</h4>
+        <input type="radio" id="c1" name="q3" value="ln|x|">
+        <label for="c1">a) ln|x|</label><br>
+        <input type="radio" id="c2" name="q3" value="e^x">
+        <label for="c2">b) e^x</label><br>
+        <input type="radio" id="c3" name="q3" value="x²">
+        <label for="c3">c) x²</label><br>
+        <input type="radio" id="c4" name="q3" value="x">
+        <label for="c4">d) x</label><br>
+      </div>
+
+      <button type="button" class="btn btn-custom" onclick="checkAnswers()">Enviar Respuestas</button>
+    </form>
+
+    <div id="result" class="result text-center"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "x²/2", // Respuesta correcta es x²/2
+        q2: "sin(x)", // Respuesta correcta es sin(x)
+        q3: "ln|x|" // Respuesta correcta es ln|x|
+      };
+
+      let score = 0;
+      const userName = document.getElementById('userName').value.trim();
+      if (!userName) {
+        alert('Por favor, ingresa tu nombre.');
+        return;
+      }
+
+      // Verificar respuestas
+      if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
+      if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
+      if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
+
+      // Mostrar resultado
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `${userName}, tu puntuación es: <strong>${score} de 3</strong>`;
+      resultDiv.style.color = score === 3 ? '#28a745' : '#dc3545';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Química 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #007b00;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario de Química 2</h1>
+        <form id="quizForm">
+            <!-- Nombre del usuario -->
+            <div class="question">
+                <label for="userName">Ingresa tu nombre:</label>
+                <input type="text" id="userName" name="userName" placeholder="Tu nombre aquí" required>
+            </div>
+
+            <!-- Preguntas del cuestionario -->
+            <div class="question">
+                <label>1. ¿Qué es el número atómico de un elemento?</label>
+                <input type="radio" name="q1" value="a" required> El número de protones<br>
+                <input type="radio" name="q1" value="b"> El número de neutrones<br>
+                <input type="radio" name="q1" value="c"> El número de electrones<br>
+                <input type="radio" name="q1" value="d"> El número de átomos<br>
+            </div>
+            <div class="question">
+                <label>2. ¿Cómo se organizan los elementos en la tabla periódica?</label>
+                <input type="radio" name="q2" value="a" required> Por masa atómica<br>
+                <input type="radio" name="q2" value="b"> Por número atómico<br>
+                <input type="radio" name="q2" value="c"> Por su grupo de trabajo<br>
+                <input type="radio" name="q2" value="d"> Por su temperatura de ebullición<br>
+            </div>
+            <div class="question">
+                <label>3. ¿Qué es un isótopo?</label>
+                <input type="radio" name="q3" value="a" required> Átomos del mismo elemento con el mismo número de neutrones<br>
+                <input type="radio" name="q3" value="b"> Átomos con el mismo número de electrones pero diferente número de protones<br>
+                <input type="radio" name="q3" value="c"> Átomos con el mismo número de protones pero diferente número de neutrones<br>
+                <input type="radio" name="q3" value="d"> Átomos de diferentes elementos con la misma masa atómica<br>
+            </div>
+            <div class="question">
+                <label>4. ¿Qué son los niveles de energía en un átomo?</label>
+                <input type="radio" name="q4" value="a" required> Las capas de electrones donde se encuentran los electrones<br>
+                <input type="radio" name="q4" value="b"> Las órbitas de los protones<br>
+                <input type="radio" name="q4" value="c"> Los centros de carga del átomo<br>
+                <input type="radio" name="q4" value="d"> Las zonas de vacíos alrededor del núcleo<br>
+            </div>
+            <div class="question">
+                <label>5. ¿Qué es un enlace iónico?</label>
+                <input type="radio" name="q5" value="a" required> Un enlace donde se comparten electrones<br>
+                <input type="radio" name="q5" value="b"> Un enlace entre un metal y un no metal por transferencia de electrones<br>
+                <input type="radio" name="q5" value="c"> Un enlace entre dos no metales<br>
+                <input type="radio" name="q5" value="d"> Un enlace entre dos metales con intercambio de protones<br>
+            </div>
+            <button type="button" class="btn" onclick="checkAnswers()">Enviar Respuestas</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: "a", // El número de protones
+                q2: "b", // Por número atómico
+                q3: "c", // Átomos con el mismo número de protones pero diferente número de neutrones
+                q4: "a", // Las capas de electrones donde se encuentran los electrones
+                q5: "b"  // Un enlace entre un metal y un no metal por transferencia de electrones
+            };
+
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const inputs = form.querySelectorAll('input[type="radio"]:checked');
+            const userName = document.getElementById('userName').value;
+
+            // Verificar respuestas
+            inputs.forEach(input => {
+                const question = input.name;
+                const userAnswer = input.value;
+                const correctAnswer = correctAnswers[question];
+
+                if (userAnswer === correctAnswer) {
+                    score++;
+                }
+            });
+
+            const result = document.getElementById('result');
+            result.textContent = `${userName}, tu puntuación es: ${score}/5`;
+            result.style.color = score === 5 ? '#007b00' : '#d9534f';
+        }
+    </script>
+</body>
+</html>

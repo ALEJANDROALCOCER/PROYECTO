@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Química - Detalles</title>
+  <meta name="description" content="Química - Reacciones, Compuestos y más">
+  <meta name="author" content="TuNombre">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/templatemo-style.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet"> <!-- Animaciones -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .header {
+      background-color: #800020; /* Guinda */
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section {
+      padding: 30px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section h2 {
+      color: #800020;
+      margin-bottom: 20px;
+    }
+
+    .pdf-section {
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeInUp 2s ease;
+    }
+
+    .pdf-section h3 {
+      color: #800020;
+      margin-bottom: 15px;
+    }
+
+    .pdf-section a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #800020;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .pdf-section a:hover {
+      background-color: #660018;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #800020;
+      color: white;
+    }
+
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: white;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    .topic button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      color: white;
+      background-color: #800020;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .topic button:hover {
+      background-color: #660018;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Química - Conceptos Clave</h1>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content-section container">
+    <h2>Temas Generales de Química</h2>
+    <p>
+      A continuación, se presentan algunos de los temas principales que se abordan en Química a nivel preparatoria en México:
+    </p>
+    <ul>
+      <li><strong>Estructura atómica:</strong> Modelos atómicos, configuración electrónica y tabla periódica.</li>
+      <li><strong>Enlaces químicos:</strong> Enlace iónico, covalente y metálico.</li>
+      <li><strong>Reacciones químicas:</strong> Tipos de reacciones y ecuaciones químicas balanceadas.</li>
+      <li><strong>Estequiometría:</strong> Leyes ponderales, cálculos químicos y mol.</li>
+      <li><strong>Soluciones:</strong> Concentraciones, propiedades coligativas y mezclas.</li>
+      <li><strong>Termoquímica:</strong> Entalpía, entropía y energía libre.</li>
+      <li><strong>Química orgánica:</strong> Hidrocarburos, grupos funcionales y polímeros.</li>
+      <li><strong>Química ambiental:</strong> Contaminación y soluciones sostenibles.</li>
+    </ul>
+  </div>
+
+  <!-- PDF Section -->
+  <div class="pdf-section container mt-5">
+    <h3>Descarga Material en PDF</h3>
+    <p>Haz clic en los siguientes enlaces para acceder a recursos descargables en formato PDF:</p>
+    <ul>
+      <li><a href="pdf/q1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> formulario1</a></li>
+      <li><a href="E:\plantillas web\Plantillas HTML\templatemo_363_metro\pdf/q2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> formulario2</a></li>
+    </ul>
+  </div>
+
+  <!-- Cuestionarios Section -->
+  <div class="container mt-5">
+    <h3>Cuestionarios de Química</h3>
+
+    <div class="topic">
+      <h4>FORMULARIO1</h4>
+      <button onclick="location.href='http://localhost/puntajes/CQ1.php'"><i class="fas fa-question-circle"></i> Cuestionario </button>
+    </div>
+
+    <div class="topic">
+      <h4>FORMULARIO2</h4>
+      <button onclick="location.href='http://localhost/puntajes/CQ2.php'"></i> Cuestionario </button>
+    </div>
+
+    <div class="topic">
+      <h4>FORMULARIO3</h4>
+      <button onclick="location.href='http://localhost/puntajes/CQ3.php'"></i> Cuestionario </button>
+    </div>
+
+    <div class="topic">
+      <h4>FORMULARIO4</h4>
+      <button onclick="location.href='http://localhost/puntajes/CQ4.php'"></i> Cuestionario </button>
+    </div>
+
+    
+
+  <!-- Button to go back to the main page -->
+  <div class="text-center mt-4">
+    <button class="back-button" onclick="location.href='index.html'"><i class="fas fa-arrow-left"></i> Regresar a la Página Principal</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Química - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>

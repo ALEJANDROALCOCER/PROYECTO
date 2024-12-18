@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Química 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #007b00;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .name-input {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .name-input input {
+            padding: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario de Química 4</h1>
+        <form id="quizForm">
+            <!-- Campo para ingresar el nombre -->
+            <div class="name-input">
+                <label for="name">Ingresa tu nombre:</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+
+            <!-- Preguntas del cuestionario -->
+            <div class="question">
+                <label>1. Define qué es un hidrocarburo.</label>
+                <input type="radio" id="q1a" name="q1" value="compuesto de carbono e hidrógeno"> Compuesto de carbono e hidrógeno<br>
+                <input type="radio" id="q1b" name="q1" value="compuesto formado por oxígeno e hidrógeno"> Compuesto formado por oxígeno e hidrógeno<br>
+                <input type="radio" id="q1c" name="q1" value="compuesto de carbono y nitrógeno"> Compuesto de carbono y nitrógeno<br>
+            </div>
+            <div class="question">
+                <label>2. ¿Qué es un compuesto saturado?</label>
+                <input type="radio" id="q2a" name="q2" value="compuesto sin enlaces dobles o triples"> Compuesto sin enlaces dobles o triples<br>
+                <input type="radio" id="q2b" name="q2" value="compuesto con enlaces dobles"> Compuesto con enlaces dobles<br>
+                <input type="radio" id="q2c" name="q2" value="compuesto con enlaces triples"> Compuesto con enlaces triples<br>
+            </div>
+            <div class="question">
+                <label>3. Da un ejemplo de un alqueno.</label>
+                <input type="radio" id="q3a" name="q3" value="eteno"> Eteno<br>
+                <input type="radio" id="q3b" name="q3" value="etano"> Etano<br>
+                <input type="radio" id="q3c" name="q3" value="metano"> Metano<br>
+            </div>
+            <div class="question">
+                <label>4. ¿Qué es un grupo funcional en química orgánica?</label>
+                <input type="radio" id="q4a" name="q4" value="grupo de átomos que determina las propiedades químicas"> Grupo de átomos que determina las propiedades químicas<br>
+                <input type="radio" id="q4b" name="q4" value="grupo de átomos sin propiedades químicas"> Grupo de átomos sin propiedades químicas<br>
+                <input type="radio" id="q4c" name="q4" value="grupo de átomos que no afecta la química"> Grupo de átomos que no afecta la química<br>
+            </div>
+            <div class="question">
+                <label>5. Escribe la fórmula molecular del metano.</label>
+                <input type="radio" id="q5a" name="q5" value="CH4"> CH₄<br>
+                <input type="radio" id="q5b" name="q5" value="C2H6"> C₂H₆<br>
+                <input type="radio" id="q5c" name="q5" value="C3H8"> C₃H₈<br>
+            </div>
+            <div class="question">
+                <label>6. ¿Qué son los isómeros?</label>
+                <input type="radio" id="q6a" name="q6" value="moléculas con la misma fórmula molecular pero diferente estructura"> Moléculas con la misma fórmula molecular pero diferente estructura<br>
+                <input type="radio" id="q6b" name="q6" value="moléculas con diferentes fórmulas moleculares"> Moléculas con diferentes fórmulas moleculares<br>
+                <input type="radio" id="q6c" name="q6" value="moléculas con la misma estructura"> Moléculas con la misma estructura<br>
+            </div>
+            <div class="question">
+                <label>7. ¿Cuál es el nombre del compuesto \( CH_3-CH_2-OH \)?</label>
+                <input type="radio" id="q7a" name="q7" value="etanol"> Etanol<br>
+                <input type="radio" id="q7b" name="q7" value="metanol"> Metanol<br>
+                <input type="radio" id="q7c" name="q7" value="propanol"> Propanol<br>
+            </div>
+            <div class="question">
+                <label>8. ¿Qué es un hidrocarburo aromático?</label>
+                <input type="radio" id="q8a" name="q8" value="hidrocarburo con estructura en anillo"> Hidrocarburo con estructura en anillo<br>
+                <input type="radio" id="q8b" name="q8" value="hidrocarburo con estructura lineal"> Hidrocarburo con estructura lineal<br>
+                <input type="radio" id="q8c" name="q8" value="hidrocarburo con estructura ramificada"> Hidrocarburo con estructura ramificada<br>
+            </div>
+            <div class="question">
+                <label>9. Nombra un uso común de los polímeros orgánicos.</label>
+                <input type="radio" id="q9a" name="q9" value="fabricación de plásticos"> Fabricación de plásticos<br>
+                <input type="radio" id="q9b" name="q9" value="producción de energía nuclear"> Producción de energía nuclear<br>
+                <input type="radio" id="q9c" name="q9" value="tratamiento de aguas"> Tratamiento de aguas<br>
+            </div>
+            <div class="question">
+                <label>10. ¿Qué es una reacción de adición?</label>
+                <input type="radio" id="q10a" name="q10" value="una reacción en la que se añade una molécula a un enlace doble"> Una reacción en la que se añade una molécula a un enlace doble<br>
+                <input type="radio" id="q10b" name="q10" value="una reacción en la que se eliminan átomos de una molécula"> Una reacción en la que se eliminan átomos de una molécula<br>
+                <input type="radio" id="q10c" name="q10" value="una reacción de oxidación"> Una reacción de oxidación<br>
+            </div>
+
+            <!-- Nuevas preguntas agregadas -->
+            <div class="question">
+                <label>11. ¿Qué tipo de enlace se encuentra en los alcanos?</label>
+                <input type="radio" id="q11a" name="q11" value="enlace simple"> Enlace simple<br>
+                <input type="radio" id="q11b" name="q11" value="enlace doble"> Enlace doble<br>
+                <input type="radio" id="q11c" name="q11" value="enlace triple"> Enlace triple<br>
+            </div>
+            <div class="question">
+                <label>12. ¿Qué es una reacción de sustitución?</label>
+                <input type="radio" id="q12a" name="q12" value="una reacción en la que un átomo o grupo de átomos es reemplazado por otro"> Una reacción en la que un átomo o grupo de átomos es reemplazado por otro<br>
+                <input type="radio" id="q12b" name="q12" value="una reacción en la que se forman nuevos compuestos con enlaces dobles"> Una reacción en la que se forman nuevos compuestos con enlaces dobles<br>
+                <input type="radio" id="q12c" name="q12" value="una reacción en la que se libera calor"> Una reacción en la que se libera calor<br>
+            </div>
+            <div class="question">
+                <label>13. ¿Cuál es el nombre del compuesto \( CH_3-CH_2-CH_3 \)?</label>
+                <input type="radio" id="q13a" name="q13" value="propano"> Propano<br>
+                <input type="radio" id="q13b" name="q13" value="etano"> Etano<br>
+                <input type="radio" id="q13c" name="q13" value="butano"> Butano<br>
+            </div>
+            <div class="question">
+                <label>14. ¿Qué es un éster?</label>
+                <input type="radio" id="q14a" name="q14" value="un compuesto formado por la reacción entre un ácido y un alcohol"> Un compuesto formado por la reacción entre un ácido y un alcohol<br>
+                <input type="radio" id="q14b" name="q14" value="un compuesto que contiene un grupo amino"> Un compuesto que contiene un grupo amino<br>
+                <input type="radio" id="q14c" name="q14" value="un compuesto que contiene un grupo carbonilo"> Un compuesto que contiene un grupo carbonilo<br>
+            </div>
+            <div class="question">
+                <label>15. ¿Qué es la teoría ácido-base de Lewis?</label>
+                <input type="radio" id="q15a" name="q15" value="un ácido es un aceptor de pares de electrones y una base es un donador de pares de electrones"> Un ácido es un aceptor de pares de electrones y una base es un donador de pares de electrones<br>
+                <input type="radio" id="q15b" name="q15" value="un ácido es un donador de protones y una base es un aceptor de protones"> Un ácido es un donador de protones y una base es un aceptor de protones<br>
+                <input type="radio" id="q15c" name="q15" value="un ácido es un donador de electrones y una base es un aceptor de electrones"> Un ácido es un donador de electrones y una base es un aceptor de electrones<br>
+            </div>
+
+            <button type="button" class="btn" onclick="checkAnswers()">Enviar</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: "compuesto de carbono e hidrógeno",
+                q2: "compuesto sin enlaces dobles o triples",
+                q3: "eteno",
+                q4: "grupo de átomos que determina las propiedades químicas",
+                q5: "CH4",
+                q6: "moléculas con la misma fórmula molecular pero diferente estructura",
+                q7: "etanol",
+                q8: "hidrocarburo con estructura en anillo",
+                q9: "fabricación de plásticos",
+                q10: "una reacción en la que se añade una molécula a un enlace doble",
+                q11: "enlace simple",
+                q12: "una reacción en la que un átomo o grupo de átomos es reemplazado por otro",
+                q13: "propano",
+                q14: "un compuesto formado por la reacción entre un ácido y un alcohol",
+                q15: "un ácido es un aceptor de pares de electrones y una base es un donador de pares de electrones"
+            };
+
+            let score = 0;
+
+            // Obtener el nombre del usuario
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                alert("Por favor, ingresa tu nombre.");
+                return;
+            }
+
+            // Verificar respuestas
+            Object.keys(answers).forEach(id => {
+                const userInput = document.querySelector(`input[name="${id}"]:checked`);
+                const correctAnswer = answers[id].toLowerCase();
+                if (userInput && userInput.value.toLowerCase() === correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Mostrar el resultado con el nombre y la puntuación
+            const result = document.getElementById('result');
+            result.textContent = `¡Gracias por participar, ${name}! Tu puntuación es: ${score}/15`;
+            result.style.color = score === 15 ? '#007b00' : '#d9534f';
+        }
+    </script>
+</body>
+</html>
